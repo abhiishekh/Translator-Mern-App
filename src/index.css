@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@font-face {
+  font-family: "ImperialScript-Regular";
+  src: url("/public/fonts/ImperialScript-Regular.ttf") format('truetype');
+  font-weight: bold;
+  font-style: normal;
+
+}
+@font-face {
+  font-family: "Calistoga-Regular" ;
+  src: url('/fonts/Calistoga-Regular.ttf') format("truetype");
+}
+::-webkit-scrollbar{
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #e6b7b7; 
+}
+::-webkit-scrollbar-thumb{
+  background-color: blue;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover{
+  background-color: brown;
+}
