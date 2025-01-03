@@ -32,7 +32,7 @@ export const ContextProvider = ({ children }) => {
       ...formData,
       select
     }
-    const response = await axios.post('https://translator-mern-app.vercel.app',dataToSend)
+    const response = await axios.post('https://translator-mern-app.vercel.app/translate',dataToSend)
     setResult(response.data.translatedText)
   }
   const handleClick = () => {

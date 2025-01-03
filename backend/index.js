@@ -5,7 +5,7 @@
 
     app.use(express.json())
     app.use(cors({origin:[
-        'https://translator-mern-app-vryj.vercel.app','http://localhost:3000'
+        'https://translator-mern-app-vryj.vercel.app','http://localhost:5173'
     ]}))
     app.post('/translate', async (req, res) => {
         const text = req.body.text; 
