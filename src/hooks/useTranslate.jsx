@@ -9,6 +9,7 @@ export const ContextProvider = ({ children }) => {
   const [result, setResult] = useState("");
   const [select, setSelect]=useState('');
   const [language, setLanguage]= useState('')
+  const [loading, setLoading] = useState(false)
 
   const handleChange = (e) => {
     e.preventDefault();
@@ -32,8 +33,18 @@ export const ContextProvider = ({ children }) => {
       ...formData,
       select
     }
-    const response = await axios.post('https://translator-mern-app.vercel.app/translate',dataToSend)
-    setResult(response.data.translatedText)
+    try {
+      setLoading(true)
+      const response = await axios.post('https://translator-mern-app.vercel.app/translate',dataToSend)
+      setResult(response.data.translatedText)
+
+      
+    } catch (error) {
+      console.log("Something went wrong " + error)
+      setLoading(false)
+    }finally{
+      setLoading(false)
+    }
   }
   const handleClick = () => {
     fetchdata()
@@ -46,6 +57,8 @@ export const ContextProvider = ({ children }) => {
         result,
         select,
         language,
+        loading,
+        setLoading,
         setLanguage,
         setFormData,
         setSelect,
