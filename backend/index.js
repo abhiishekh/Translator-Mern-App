@@ -40,7 +40,9 @@ app.post('/translate', async (req, res) => {
         res.status(500).json({ error: 'Translation failed' })
     }
 })
-
+app.get('/',(req,res)=>{
+    req.send("backend is working")
+})
 app.listen(3000, () => {
     console.log("Server is running on port 3000")
 })
